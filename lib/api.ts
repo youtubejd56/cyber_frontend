@@ -1,9 +1,6 @@
 import axios from 'axios'
 import Cookies from 'js-cookie'
-
-// API URL - defaults to local development server
-// Override with NEXT_PUBLIC_API_URL environment variable for production
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+import { API_BASE } from './config'
 
 const api = axios.create({
     baseURL: `${API_BASE}/api`,

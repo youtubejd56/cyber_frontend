@@ -5,9 +5,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import { Terminal, LayoutDashboard, Target, Shield, Trophy, LogOut, User, Menu, X, ChevronDown, Wifi, Monitor, Cpu } from 'lucide-react'
 import Cookies from 'js-cookie'
 import { authAPI } from '../lib/api'
-
-// Fallback to production API URL if env var is not set
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'https://cyber-backend-ciui.onrender.com'
+import { API_BASE } from '../lib/config'
 
 export default function Navbar() {
     const pathname = usePathname()

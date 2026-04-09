@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import Navbar from '../../components/Navbar'
 import Cookies from 'js-cookie'
 import { Terminal, Monitor, Play, Square, Copy, ExternalLink, Loader2 } from 'lucide-react'
+import { API_BASE } from '../../lib/config'
 
 export default function PwnBoxPage() {
     const router = useRouter()
@@ -26,7 +27,7 @@ export default function PwnBoxPage() {
 
     const checkVpnStatus = async () => {
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/vpn/status/`, {
+            const res = await fetch(`${API_BASE}/api/vpn/status/`, {
                 headers: {
                     'Authorization': `Bearer ${Cookies.get('token')}`
                 }
